@@ -14,17 +14,10 @@
 # The PG can be used to detect errors in this file, just create a new project with this addon 
 # and the PG will write to the console the kind of error and in which line it is
 
-meta:
-	ADDON_NAME = ofxGstRTP
-	ADDON_DESCRIPTION = Addon for sending video, audio, depth and osc to a remote peer using RTP. It can also use ofxXMPP to initiate the session through google talk, jabber or any other xmpp compatible server so you don't need to know the IP of the remote end. It can also use ofxNice to do NAT transversal so you can send data from computers behind NAT routers. Requires gstreamer to work.
-	ADDON_AUTHOR = Arturo Castro
-	ADDON_TAGS = "RTP" "video" "audio" "depth" "osc" "kinect" "NAT transversal" "google talk" "jabber" "ICE" "NAT" "network"
-	ADDON_URL = http://github.com/arturoc/ofxGstRTP
-
 common:
 	# dependencies with other addons, a list of them separated by spaces 
 	# or use += in several lines
-	ADDON_DEPENDENCIES = ofxNice ofxXMPP ofxGStreamer ofxOsc ofxSnappy ofxDepthStreamCompression
+	# ADDON_DEPENDENCIES = 
 	
 	# include search paths, this will be usually parsed from the file system
 	# but if the addon or addon libraries need special search paths they can be
@@ -65,7 +58,7 @@ common:
 	
 	# when parsing the file system looking for include paths exclude this for all or
 	# a specific platform
-    # ADDON_INCLUDES_EXCLUDE =
+# ADDON_INCLUDES_EXCLUDE =
 
 linux:
 	
@@ -78,6 +71,13 @@ linuxarmv7l:
 win_cb:
 	
 vs:
+	ADDON_INCLUDES = ../../../addons/ofxGstRTP/src
+	ADDON_INCLUDES += C:/gstreamer/1.0/x86_64/include
+	ADDON_INCLUDES += C:/gstreamer/1.0/x86_64/include/gstreamer-1.0
+	ADDON_INCLUDES += C:/gstreamer/1.0/x86_64/include/gstreamer-1.0/gst
+	ADDON_INCLUDES += C:/gstreamer/1.0/x86_64/include/glib-2.0
+	ADDON_INCLUDES += C:/gstreamer/1.0/x86_64/lib/glib-2.0/include
+
 	
 android/armeabi:	
 	
